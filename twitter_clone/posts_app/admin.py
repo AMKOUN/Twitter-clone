@@ -1,5 +1,5 @@
 from django.contrib import admin
-from posts_app.models import Post
+from posts_app.models import Post, Group
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -18,3 +18,5 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('pub_date',)
 
     empty_value_display = '-пусто-'
+
+admin.site.register(Group)
