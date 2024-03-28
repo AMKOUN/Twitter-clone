@@ -27,6 +27,7 @@ class Post(models.Model):
         'Group',
         blank=True,
         null=True,
+        related_name='posts',
         on_delete=models.SET_NULL,
         help_text='Ваша группа',
         verbose_name='Группа',
@@ -51,9 +52,7 @@ class Group(models.Model):
         verbose_name='Описание',
         help_text='Отображает описание группы'
     )
-
-    class Meta:
-        ordering = ('-pub_date',),
-
+        
+    
     def __str__(self):
         return self.title
